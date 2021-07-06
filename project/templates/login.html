@@ -1,0 +1,23 @@
+{% extends "master_template.html" %} {% block title %} UniversityOfBalochistan {%endblock%} {%block body%}
+<h1 class="label label-success">Computerscience</h1>
+WELCOME to BS class<br>
+
+<form class="form-signin" action="/dashboard" method="post">
+    {% set fname = 'img/'+ params['login_image'] %}
+    <img class="mb-4" src="{{url_for('static', filename=fname)}}" alt="" width="100" height="100">
+    <h1 class="h3 mb-3 font-weight-normal">Admin Login</h1>
+    <label for="uname" class="sr-only">User Name</label>
+    <input type="text" id="uname" name="uname" class="form-control" style="width: auto" placeholder="User Name" required autofocus>
+    <label for="pass" class="sr-only">Password</label>
+    <input type="password" id="pass" name="pass" class="form-control" style="width: auto" placeholder="Password" required>
+    <div class="checkbox mb-3">
+        <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: auto">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">© {{params['blog_name'] }} 2021</p>
+</form>
+
+
+</table>{%endblock%}

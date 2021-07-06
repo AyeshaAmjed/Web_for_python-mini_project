@@ -1,0 +1,30 @@
+{% extends "master_template.html" %} {%block title%} UniversityOfBalochistan {%endblock%} {% block body%}
+<h2>Welcome</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>GroupMembers</th>
+            <th>Project</th>
+            <th>Project description</th>
+            <th>Supervisor</th>
+            <th>Email</th>
+            <th>Program Study</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {%for stud in students%}
+        <tr>
+            <td>{{stud.full_name}}</td>
+            <td>{{stud.groupmembers}}</td>
+            <td>{{stud.project}}</td>
+            <td>{{stud.projectdes}}</td>
+            <td>{{stud.supervisor}}</td>
+            <td>{{stud.email}}</td>
+            <td>{{stud.batch_title}}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+{%endblock%}

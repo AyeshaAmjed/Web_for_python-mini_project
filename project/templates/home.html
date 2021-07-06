@@ -1,0 +1,30 @@
+{% extends "master_template.html" %} {% block title %} UniversityOfBalochistan {%endblock%} {%block body%}
+<h1 class="label label-success">Computerscience</h1>
+WELCOME to ComputerScienceDepartment<br>
+<table class="table table-hover">
+    <tr>
+        <td class="btn btn-primary">
+            BATCH_TITLE
+        </td>
+        <td>
+            TOTAL_STUDENTS
+        </td>
+    </tr>
+    {% for stud in total_students %}
+    <tr>
+        <td class="btn btn-default">
+            <a href="view_students/{{stud.batch_title}}"> {{ stud.batch_title }} </a>
+        </td>
+        <td>
+            <a href="view_students/{{stud.total_record}}"> {{ stud.total_record }} </a>
+        </td>
+        {%endfor%}
+    </tr>
+    <tr>
+        <td> Total Students:</td>
+        <td>{{total}}
+
+        </td>
+    </tr>
+
+</table>{%endblock%}
